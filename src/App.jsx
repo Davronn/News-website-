@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/detelis" element={<Detelis/>} />
+        <Route path="/detelis:postId" element={<Detelis/>} />
       </Routes>
     </Router>
   );

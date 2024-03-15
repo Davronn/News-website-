@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../scss/home.scss";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate()
   const [post, setpost] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -15,6 +17,8 @@ function Home() {
     };
     fetchPosts();
   }, []);
+
+
   return (
     <>
       <div className="container">
@@ -24,10 +28,11 @@ function Home() {
             {post.length > 0 &&
               post.map((post) => (
                 <div key={post.id}>
-                  <div className="card">
+                  <div className="card" onClick={() => navigate(`/detelis/${post.id}`)}>
                     <img src={post.url} alt={post.title} />
                     <div className="card_text">
-                      <h2>{post.title}</h2>
+                      <h5>{post.title}</h5>
+                      <p>Floyd Miles 3 Days Ago</p>
                     </div>
                   </div>
                 </div>
