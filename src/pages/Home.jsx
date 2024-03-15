@@ -22,8 +22,9 @@ function Home() {
         <div className="cards">
           <div className="card">
             {post.length > 0 && (post.map((post) => (
-              <li>{post.title}</li>,
-              <div>{post.url}</div>
+              <li key={post.id}> ,{post.title}</li>,
+              
+              <img key={post.id} src={post.url} alt="" />
             )))}
           </div>
         </div>
