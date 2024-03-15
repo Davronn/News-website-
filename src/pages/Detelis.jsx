@@ -2,7 +2,7 @@ import React from 'react'
 
 function Detelis() {
   return (
-    <div>Detelis</div>
+    <h1>Detelis</h1>
   )
 }
 
